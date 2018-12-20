@@ -1,0 +1,72 @@
+#root {
+    font-family: Verdana, Arial, sans-serif;
+    color: #333;
+    font-size: 13px;
+    width: 646px;
+    float: left;
+    margin-left: 20px;
+}
+
+.logo {
+    background-position: 0 -70px;
+    border: none;
+    padding: 20px;
+    display: block;
+    width: 101px;
+    border-radius: 10px;
+    background-color: #191919;
+    color: #f5de50;
+}
+
+.movie-section {
+    background-color: #f6f6f5;
+    border: #fff 1px solid;
+    padding: 10px;
+    height: 213px;
+}
+
+.movie-poster {
+    float:left;
+    margin-right: 15px;
+}
+
+.text-section {
+    margin-bottom: 15px;
+    height: 70px;
+}
+
+.cert-runtime-genre {
+    padding-bottom: 15px;
+}
+
+.certificate {
+    background-color: #f6f6f5;
+    border: #fff 2px solid;
+    font-weight: bold;
+}
+
+.runtime {
+    margin-left: 15px;
+    margin-right: 30px;
+}
+
+.rating {
+    margin-top: 10px;
+}
+
+.metascore {
+    background-color: #ffcc33;
+}
+
+.trailer-frame {
+    margin-top: 15px;
+}
+
+.button-trailer {
+    border-radius: 5px;
+}
+
+.movie-list {
+    list-style-type: none;
+    padding-left: 0px;
+}

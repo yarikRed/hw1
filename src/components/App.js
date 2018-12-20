@@ -5,7 +5,9 @@ import movies from '../source';
 function App(){
     return (
         <div>
-            <h1>MyMDb</h1>
+            <div>
+                <h1 className='logo'>MyMDb</h1>
+            </div>
             <MovieList movies={movies}/>
         </div>
     )

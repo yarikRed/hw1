@@ -1,4 +1,5 @@
-import React, {Component} from "react";
+import React, {Component} from "react"
+import './css/style.css'
 
 class Movie extends Component {
 
@@ -8,19 +9,40 @@ class Movie extends Component {
 
     render() {
         const {movie} = this.props
-        const body = <section>{movie.text}</section>;
-        const movieDetails = <p>{movie.certificate} {movie.duration} {movie.genres} {movie.metascore} Metascore</p>
-        const watchTrailer = this.state.isOpen && <div><iframe title={movie.uniqueTitle} width="560" height="315" src={movie.trailer}></iframe></div>
+
+        const image = (<div className='movie-poster'>
+                            <img src={movie.img}/>
+                       </div>)
+
+        const title = (<h4>{movie.title} ({movie.date})</h4>)
+
+        const body = (<div className='text-section'>{movie.text}</div>)
+
+        const movieDetails = (<div className='cert-runtime-genre'>
+                                <span className='certificate'> {movie.certificate}</span>
+                                <span className='runtime'> {movie.duration} min</span>
+                                <span>{movie.genres}</span>
+                                <div className='rating'>
+                                    <span className='metascore'> {movie.metascore}</span>
+                                    <span> Metascore</span>
+                                </div>
+                              </div>)
+
+        const button = (<div>
+                            <button onClick={this.handleClick} className='button-trailer'>
+                                {this.state.isOpen ? "Close trailer" : "Watch trailer"}
+                            </button>
+                        </div>)
+
+        const watchTrailer = (this.state.isOpen && <div className='trailer-frame'><iframe title={movie.uniqueTitle} width="660" height="415" src={movie.trailer}></iframe></div>)
 
         return (
-            <div>
-                <h2>{movie.title}</h2>
-                {body}
-                <h3>creation date: {(new Date(movie.date)).toDateString()}</h3>
+            <div className='movie-section'>
+                {image}
+                {title}
                 {movieDetails}
-                <button onClick={this.handleClick}>
-                    {this.state.isOpen ? "Close trailer" : "Watch trailer"}
-                </button>
+                {body}
+                {button}
                 {watchTrailer}
             </div>
         )
